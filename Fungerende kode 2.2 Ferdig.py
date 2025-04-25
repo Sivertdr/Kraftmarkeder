@@ -121,6 +121,7 @@ def OPF():
     #Write result on performance
     results.write(num=1)
 
+
     #Print the results we need
     
     print()
@@ -141,6 +142,10 @@ def OPF():
     print("Line Prices (dual values):")
     for n in model.set :
         print(f" Node {n} {model.dual[model.FlowBal_const[n]]/model.pu_base:.2f} NOK/MWh") 
+    print()
+    print("Line Flows:")
+    for l in model.set:
+        print(f"Line {l} ({model.line_from[l]} → {model.line_to[l]}): Flow = {pyo.value(model.flow[l]):.2f} MW")
     
     return()
 
