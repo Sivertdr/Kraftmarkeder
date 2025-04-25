@@ -199,21 +199,21 @@ def OPF():
     print()
     print("Supplied Loads at Node 2:")
     for n in model.nodes:
-        print(f" Load {n}: Supplied {pyo.value(model.load_supplied[n]):.2f} / {model.load_demand[n]} MW ")
+        print(f"Load {n}: Supplied {pyo.value(model.load_supplied[n]):.2f} / {model.load_demand[n]} MW ")
     print()
     print(f"Total Cost: {pyo.value(model.OBJ):.2f} NOK")
     print()
     print("Nodal Prices (dual values):")
     for n in model.nodes :
-        print(f" Node {n} {model.dual[model.LoadBal_const[n]]:.2f} NOK/MWh")
+        print(f"Node {n} {model.dual[model.LoadBal_const[n]]:.2f} NOK/MWh")
     print()
     print("Line Prices (dual values):")
     for n in model.lines :
-        print(f" Node {n} {model.dual[model.FlowBal_const[n]]/model.pu_base:.2f} NOK/MWh")
+        print(f"Line {n} {model.dual[model.FlowBal_const[n]]/model.pu_base:.2f} NOK/MWh")
     print()
     print("Generator Prices (dual values):")
     for n in model.generators :
-        print(f" Generator {n} {model.dual[model.Max_gen_const[n]]:.2f} NOK/MWh")
+        print(f"Generator {n} {model.dual[model.Max_gen_const[n]]:.2f} NOK/MWh")
     print()
     print("Generator 2 (dual values):")
     print(f"CO2 costs: {model.dual[model.minimum_gen_2]:.2f} NOK")

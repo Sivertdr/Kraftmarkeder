@@ -137,11 +137,11 @@ def OPF():
     print()
     print("Nodal Prices (dual values):")
     for n in model.set :
-        print(f" Node {n} {model.dual[model.LoadBal_const[n]]:.2f} NOK/MWh")
+        print(f"Node {n} {model.dual[model.LoadBal_const[n]]:.2f} NOK/MWh")
     print()
     print("Line Prices (dual values):")
     for n in model.set :
-        print(f" Node {n} {model.dual[model.FlowBal_const[n]]/model.pu_base:.2f} NOK/MWh") 
+        print(f"Line {n} {model.dual[model.FlowBal_const[n]]/model.pu_base:.2f} NOK/MWh") 
     print()
     print("Line Flows:")
     for l in model.set:

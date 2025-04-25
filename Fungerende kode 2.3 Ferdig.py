@@ -131,6 +131,9 @@ def OPF():
     #Write result on performance
     results.write(num=1)
 
+
+    #Print the results we need    
+
     print()
     print("--- DCOPF Results ---")
     for g in model.generators: #Calculate the values and costs for the different generators
@@ -153,19 +156,19 @@ def OPF():
     print()
     print("Nodal Prices (dual values):")
     for n in model.nodes :
-        print(f" Node {n} {model.dual[model.LoadBal_const[n]]:.2f} NOK/MWh")
+        print(f"Node {n} {model.dual[model.LoadBal_const[n]]:.2f} NOK/MWh")
     print()
     print("Line Prices (dual values):")
     for n in model.lines :
-        print(f" Node {n} {model.dual[model.FlowBal_const[n]]/model.pu_base:.2f} NOK/MWh")
+        print(f"Line {n} {model.dual[model.FlowBal_const[n]]/model.pu_base:.2f} NOK/MWh")
     print()
     print("Generator Prices (dual values):")
     for n in model.generators :
-        print(f" Generator {n} {model.dual[model.Max_gen_const[n]]:.2f} NOK/MWh")
+        print(f"Generator {n} {model.dual[model.Max_gen_const[n]]:.2f} NOK/MWh")
 
     
     return()
 
-#Run the function
+
 
 OPF()
