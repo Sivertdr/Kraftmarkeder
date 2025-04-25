@@ -80,7 +80,7 @@ def OPF():
     
     model.load_demand = pyo.Param(model.loads, initialize={l : Load_data[l]["demand"] for l in Load_data})
     
-    model.load_WTP = pyo.Param(model.loads, initialize={l : Load_data[l]["WTP"] if Load_data[l]["WTP"] else 0 for l in Load_data})
+    model.load_WTP = pyo.Param(model.loads, initialize={l : Load_data[l]["WTP"] for l in Load_data})
     
 
     #Defining the variables
